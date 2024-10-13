@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+mysqlclient
+pymysql
+Werkzeug
+Jinja2
+itsdangerous
+click
