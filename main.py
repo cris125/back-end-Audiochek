@@ -2,7 +2,7 @@
 from flask import Flask, jsonify, request
 from config import Config
 from models import db, Usuario ,AudiometriaSimple ,AudiometriaCompleta
-
+import os
 app = Flask(__name__)
 
 # Cargar la configuración desde config.py
@@ -190,5 +190,7 @@ def get_audiometria_completa():
 # Ejecutar la aplicación
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()  # Crear las tablas si no existen
-    app.run(debug=True)
+        db.create_all()  # Crear las tablas si no existen    
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host="0.0.0.0", port=port)
+
